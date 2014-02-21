@@ -14,6 +14,16 @@ public class MowerService {
             return;
         }
 
-        mower.setOrientation(Orientation.WEST);
+        switch (mowerControls.get(0)) {
+            case TURN_LEFT:
+                mower.setOrientation(Orientation.WEST);
+                break;
+            case TURN_RIGHT:
+                mower.setOrientation(Orientation.EAST);
+                break;
+            case ADVANCE:
+                mower.setY(mower.getY() + 1);
+                break;
+        }
     }
 }
