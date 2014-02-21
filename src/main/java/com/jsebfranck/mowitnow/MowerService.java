@@ -9,23 +9,18 @@ import java.util.List;
 public class MowerService {
 
     public void moveMower(Ground ground, Mower mower, List<MowerControl> mowerControls) {
-
-        if (mowerControls.isEmpty()) {
-            return;
-        }
-
-        MowerControl mowerControl = mowerControls.get(0);
-
-        switch (mowerControl) {
-            case TURN_LEFT:
-                mower.setOrientation(Orientation.getLeftOrientation(mower.getOrientation()));
-                break;
-            case TURN_RIGHT:
-                mower.setOrientation(Orientation.getRightOrientation(mower.getOrientation()));
-                break;
-            case ADVANCE:
-                advanceMower(ground, mower);
-                break;
+        for (MowerControl mowerControl : mowerControls) {
+            switch (mowerControl) {
+                case TURN_LEFT:
+                    mower.setOrientation(Orientation.getLeftOrientation(mower.getOrientation()));
+                    break;
+                case TURN_RIGHT:
+                    mower.setOrientation(Orientation.getRightOrientation(mower.getOrientation()));
+                    break;
+                case ADVANCE:
+                    advanceMower(ground, mower);
+                    break;
+            }
         }
     }
 

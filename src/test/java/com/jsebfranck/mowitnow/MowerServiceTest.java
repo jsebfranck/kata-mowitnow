@@ -124,6 +124,13 @@ public class MowerServiceTest {
                 { "with advance control on east direction and east border, should not move",
                         new Ground(10, 10), new Mower(9, 5, EAST), Arrays.asList(ADVANCE),
                         9, 5, EAST },
+
+                /************ Several movements tests *************/
+
+                { "with several movements, should move several times",
+                        new Ground(5, 5), new Mower(1, 2, NORTH),
+                        Arrays.asList(TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, ADVANCE),
+                        1, 3, NORTH }
         });
     }
 
