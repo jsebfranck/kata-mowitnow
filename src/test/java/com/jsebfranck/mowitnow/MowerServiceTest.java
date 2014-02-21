@@ -106,6 +106,24 @@ public class MowerServiceTest {
                 { "with right control on east direction, should turn to be on south direction",
                         new Ground(10, 10), new Mower(0, 0, EAST), Arrays.asList(TURN_RIGHT),
                         0, 0, SOUTH },
+
+                /************ Ground limits tests *************/
+
+                { "with advance control on north direction and north border, should not move",
+                        new Ground(10, 10), new Mower(5, 9, NORTH), Arrays.asList(ADVANCE),
+                        5, 9, NORTH },
+
+                { "with advance control on south direction and south border, should not move",
+                        new Ground(10, 10), new Mower(5, 0, SOUTH), Arrays.asList(ADVANCE),
+                        5, 0, SOUTH },
+
+                { "with advance control on west direction and west border, should not move",
+                        new Ground(10, 10), new Mower(0, 5, WEST), Arrays.asList(ADVANCE),
+                        0, 5, WEST },
+
+                { "with advance control on east direction and east border, should not move",
+                        new Ground(10, 10), new Mower(9, 5, EAST), Arrays.asList(ADVANCE),
+                        9, 5, EAST },
         });
     }
 
@@ -117,8 +135,8 @@ public class MowerServiceTest {
         mowerService.moveMower(ground, mower, mowerControls);
 
         // Then we check the mower position
-        assertEquals(expectedX, mower.getX());
-        assertEquals(expectedY, mower.getY());
-        assertEquals(expectedOrientation, mower.getOrientation());
+        assertEquals("The mower is not at the expected x position", expectedX, mower.getX());
+        assertEquals("The mower is not at the expected y position", expectedY, mower.getY());
+        assertEquals("The mower is not oriented as expected", expectedOrientation, mower.getOrientation());
     }
 }

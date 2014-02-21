@@ -24,24 +24,24 @@ public class MowerService {
                 mower.setOrientation(Orientation.getRightOrientation(mower.getOrientation()));
                 break;
             case ADVANCE:
-                advanceMower(mower);
+                advanceMower(ground, mower);
                 break;
         }
     }
 
-    private void advanceMower(Mower mower) {
+    private void advanceMower(Ground ground, Mower mower) {
         switch (mower.getOrientation()) {
             case NORTH:
-                mower.setY(mower.getY() + 1);
+                mower.setY(Math.min(mower.getY() + 1, ground.getHeight() - 1));
                 break;
             case WEST:
-                mower.setX(mower.getX() - 1);
+                mower.setX(Math.max(mower.getX() - 1, 0));
                 break;
             case SOUTH:
-                mower.setY(mower.getY() - 1);
+                mower.setY(Math.max(mower.getY() - 1, 0));
                 break;
             case EAST:
-                mower.setX(mower.getX() + 1);
+                mower.setX(Math.min(mower.getX() + 1, ground.getWidth() - 1));
                 break;
         }
     }
