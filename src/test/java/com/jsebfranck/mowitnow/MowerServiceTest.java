@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -11,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static com.jsebfranck.mowitnow.Orientation.*;
+import static com.jsebfranck.mowitnow.MowerControl.*;
 
 /**
  * @see com.jsebfranck.mowitnow.MowerService
@@ -33,34 +36,34 @@ public class MowerServiceTest {
     private final int expectedY;
     private final Orientation expectedOrientation;
 
-    @Parameterized.Parameters
-    public static Collection parameters() {
-        return Arrays.asList(new Object[][] {
-                // without controls, should not move
-                { new Ground(10, 10), new Mower(0, 0, Orientation.NORTH), 0, 0, Orientation.NORTH, ctrl()},
-
-                // with left control, should turn to left
-                { new Ground(10, 10), new Mower(0, 0, Orientation.NORTH), 0, 0, Orientation.WEST, ctrl(MowerControl.TURN_LEFT)},
-
-                // with right control, should turn to right
-                { new Ground(10, 10), new Mower(0, 0, Orientation.NORTH), 0, 0, Orientation.EAST, ctrl(MowerControl.TURN_RIGHT)},
-
-                // with advance control, should advance
-                { new Ground(10, 10), new Mower(0, 0, Orientation.NORTH), 0, 1, Orientation.NORTH, ctrl(MowerControl.ADVANCE)},
-        });
-    }
-
-    public static List<MowerControl> ctrl(MowerControl... mowerControls) {
-        return (mowerControls == null) ? Collections.<MowerControl>emptyList() : Arrays.asList(mowerControls);
-    }
-
-    public MowerServiceTest(Ground ground, Mower mower, int expectedX, int expectedY, Orientation expectedOrientation, List<MowerControl> mowerControls) {
+    public MowerServiceTest(String testDescription, Ground ground, Mower mower, List<MowerControl> mowerControls, int expectedX, int expectedY, Orientation expectedOrientation) {
         this.ground = ground;
         this.mower = mower;
+        this.mowerControls = mowerControls;
         this.expectedX = expectedX;
         this.expectedY = expectedY;
         this.expectedOrientation = expectedOrientation;
-        this.mowerControls = mowerControls;
+    }
+
+    @Parameters(name = "{0}")
+    public static Collection parameters() {
+        return Arrays.asList(new Object[][] {
+                { "without controls, should not move",
+                        new Ground(10, 10), new Mower(0, 0, NORTH), Collections.emptyList(),
+                        0, 0, NORTH },
+
+                { "with left control, should turn to left",
+                        new Ground(10, 10), new Mower(0, 0, NORTH), Arrays.asList(TURN_LEFT),
+                        0, 0, WEST },
+
+                { "with right control, should turn to right",
+                        new Ground(10, 10), new Mower(0, 0, NORTH), Arrays.asList(TURN_RIGHT),
+                        0, 0, EAST },
+
+                { "with advance control, should advance",
+                        new Ground(10, 10), new Mower(0, 0, NORTH), Arrays.asList(ADVANCE),
+                        0, 1, NORTH },
+        });
     }
 
     @Test
