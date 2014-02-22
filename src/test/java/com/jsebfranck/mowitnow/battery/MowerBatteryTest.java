@@ -2,12 +2,10 @@ package com.jsebfranck.mowitnow.battery;
 
 import com.jsebfranck.mowitnow.mower.Ground;
 import com.jsebfranck.mowitnow.mower.Position;
-import com.jsebfranck.mowitnow.mower.movement.Movement;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static com.jsebfranck.mowitnow.mower.Orientation.EAST;
 import static com.jsebfranck.mowitnow.mower.Orientation.NORTH;

@@ -1,7 +1,7 @@
 package com.jsebfranck.mowitnow.mower;
 
 /**
- * Represents a mower and its position.
+ * Represents a mower position.
  * @author jsebfranck
  */
 public class Position {
