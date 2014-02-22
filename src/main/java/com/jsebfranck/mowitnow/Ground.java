@@ -2,6 +2,7 @@ package com.jsebfranck.mowitnow;
 
 /**
  * Represents the ground where a mower can be moved.
+ * @author jsebfranck
  */
 public class Ground {
 

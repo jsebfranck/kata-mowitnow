@@ -5,6 +5,7 @@ import com.jsebfranck.mowitnow.Position;
 
 /**
  * Allow to move a mover.
+ * @author jsebfranck
  */
 public interface MovementAction {
 

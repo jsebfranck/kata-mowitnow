@@ -2,6 +2,7 @@ package com.jsebfranck.mowitnow.movement;
 
 /**
  * All possible movements of a mover.
+ * @author jsebfranck
  */
 public enum Movement {
     TURN_LEFT(new TurnToLeftMovementAction()),

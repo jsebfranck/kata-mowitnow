@@ -2,6 +2,7 @@ package com.jsebfranck.mowitnow;
 
 /**
  * All possible orientations of the mower.
+ * @author jsebfranck
  */
 public enum Orientation {
     NORTH("WEST", "EAST"),
