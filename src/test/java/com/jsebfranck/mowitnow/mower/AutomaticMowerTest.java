@@ -17,7 +17,7 @@ import static com.jsebfranck.mowitnow.mower.Orientation.*;
 import static com.jsebfranck.mowitnow.mower.movement.Movement.*;
 
 /**
- * @see com.jsebfranck.mowitnow.mower.AutomaticMower
+ * @see AutomaticMower
  * @author jsebfranck
  */
 @RunWith(Parameterized.class)

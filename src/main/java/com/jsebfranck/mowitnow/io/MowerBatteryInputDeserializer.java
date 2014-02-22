@@ -44,29 +44,29 @@ class MowerBatteryInputDeserializer {
     }
 
     private Ground getGround(String groundLine) throws IOMowerBatteryException {
-        Pattern pattern = Pattern.compile("(\\d)\\s(\\d)");
-        Matcher matcher = pattern.matcher(groundLine);
-        if (! matcher.find()) {
-            throw new IOMowerBatteryException("Invalid ground provided " + groundLine);
-        }
-
+        Matcher matcher = findByPattern(groundLine, "(\\d)\\s(\\d)", "Invalid ground provided " + groundLine);
         int width = Integer.valueOf(matcher.group(1));
         int height = Integer.valueOf(matcher.group(2));
+
         return new Ground(width, height);
     }
 
     private Position getPosition(String positionLine) throws IOMowerBatteryException {
-        Pattern pattern = Pattern.compile("(\\d)\\s(\\d)\\s(\\p{Upper})");
-        Matcher matcher = pattern.matcher(positionLine);
-        if (! matcher.find()) {
-            throw new IOMowerBatteryException("Invalid position provided " + positionLine);
-        }
-
+        Matcher matcher = findByPattern(positionLine, "(\\d)\\s(\\d)\\s(\\p{Upper})", "Invalid position provided " + positionLine);
         int x = Integer.valueOf(matcher.group(1));
         int y = Integer.valueOf(matcher.group(2));
         Orientation orientation = getOrientationFromLabel(matcher.group(3));
 
         return new Position(x, y, orientation);
+    }
+
+    private Matcher findByPattern(String line, String regex, String exceptionMessageIfNotFound) throws IOMowerBatteryException {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(line);
+        if (! matcher.find()) {
+            throw new IOMowerBatteryException(exceptionMessageIfNotFound);
+        }
+        return matcher;
     }
 
     private Orientation getOrientationFromLabel(String label) throws IOMowerBatteryException {
