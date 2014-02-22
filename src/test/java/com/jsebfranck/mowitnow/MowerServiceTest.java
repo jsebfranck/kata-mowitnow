@@ -130,7 +130,12 @@ public class MowerServiceTest {
                 { "with several movements, should move several times",
                         new Ground(5, 5), new Mower(1, 2, NORTH),
                         Arrays.asList(TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, ADVANCE),
-                        1, 3, NORTH }
+                        1, 3, NORTH },
+
+                { "with several different movements, should still move several times",
+                        new Ground(5, 5), new Mower(3, 3, EAST),
+                        Arrays.asList(ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, TURN_RIGHT, TURN_RIGHT, ADVANCE),
+                        5, 1, EAST }
         });
     }
 
