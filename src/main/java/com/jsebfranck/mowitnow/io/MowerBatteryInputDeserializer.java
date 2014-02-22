@@ -19,8 +19,12 @@ import java.util.regex.Pattern;
  */
 class MowerBatteryInputDeserializer {
 
-    MowerBatteryInput deserialize(List<String> mowerBatteryLines) {
+    MowerBatteryInput deserialize(List<String> mowerBatteryLines) throws IOMowerBatteryException {
         Iterator<String> iterator = mowerBatteryLines.iterator();
+
+        if (! iterator.hasNext()) {
+            throw new IOMowerBatteryException("Lines cannot be empty");
+        }
 
         // First line is the ground
         Ground ground = getGround(iterator.next());
@@ -29,6 +33,9 @@ class MowerBatteryInputDeserializer {
         List<MowerBatteryEntry> entries = new ArrayList<MowerBatteryEntry>();
         while (iterator.hasNext()) {
             Position position = getPosition(iterator.next());
+            if (! iterator.hasNext()) {
+                throw new IOMowerBatteryException("A mower has no position");
+            }
             List<Movement> movements = getMovements(iterator.next());
             entries.add(new MowerBatteryEntry(position, movements));
         }
@@ -36,20 +43,24 @@ class MowerBatteryInputDeserializer {
         return new MowerBatteryInput(ground, entries);
     }
 
-    private Ground getGround(String groundLine) {
+    private Ground getGround(String groundLine) throws IOMowerBatteryException {
         Pattern pattern = Pattern.compile("(\\d)\\s(\\d)");
         Matcher matcher = pattern.matcher(groundLine);
-        matcher.find();
+        if (! matcher.find()) {
+            throw new IOMowerBatteryException("Invalid ground provided " + groundLine);
+        }
 
         int width = Integer.valueOf(matcher.group(1));
         int height = Integer.valueOf(matcher.group(2));
         return new Ground(width, height);
     }
 
-    private Position getPosition(String positionLine) {
+    private Position getPosition(String positionLine) throws IOMowerBatteryException {
         Pattern pattern = Pattern.compile("(\\d)\\s(\\d)\\s(\\p{Upper})");
         Matcher matcher = pattern.matcher(positionLine);
-        matcher.find();
+        if (! matcher.find()) {
+            throw new IOMowerBatteryException("Invalid position provided " + positionLine);
+        }
 
         int x = Integer.valueOf(matcher.group(1));
         int y = Integer.valueOf(matcher.group(2));
@@ -58,7 +69,7 @@ class MowerBatteryInputDeserializer {
         return new Position(x, y, orientation);
     }
 
-    private Orientation getOrientationFromLabel(String label) {
+    private Orientation getOrientationFromLabel(String label) throws IOMowerBatteryException {
         switch (label) {
             case "N":
                 return Orientation.NORTH;
@@ -69,10 +80,10 @@ class MowerBatteryInputDeserializer {
             case "E":
                 return Orientation.EAST;
         }
-        return null;
+        throw new IOMowerBatteryException("Unknown position provided " + label);
     }
 
-    private List<Movement> getMovements(String movementsLine) {
+    private List<Movement> getMovements(String movementsLine) throws IOMowerBatteryException {
         List<Movement> movements = new ArrayList<Movement>();
 
         for (int i = 0 ; i < movementsLine.length() ; i++) {
@@ -82,7 +93,7 @@ class MowerBatteryInputDeserializer {
         return movements;
     }
 
-    private Movement getMovementFromLabel(char label) {
+    private Movement getMovementFromLabel(char label) throws IOMowerBatteryException {
         switch (label) {
             case 'G':
                 return Movement.TURN_LEFT;
@@ -91,6 +102,6 @@ class MowerBatteryInputDeserializer {
             case 'A':
                 return Movement.ADVANCE;
         }
-        return null;
+        throw new IOMowerBatteryException("Unknown movement provided " + label);
     }
 }
