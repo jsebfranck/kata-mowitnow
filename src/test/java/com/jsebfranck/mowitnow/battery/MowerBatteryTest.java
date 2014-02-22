@@ -32,13 +32,13 @@ public class MowerBatteryTest {
         // Given
         Ground ground = new Ground(5, 5);
 
-        Position positionMower1 = new Position(1, 2, NORTH);
-        List<Movement> movementsMower1 = Arrays.asList(TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, ADVANCE);
+        MowerBatteryEntry entryMower1 = new MowerBatteryEntry(new Position(1, 2, NORTH),
+                Arrays.asList(TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, ADVANCE));
 
-        Position positionMower2 = new Position(3, 3, EAST);
-        List<Movement> movementsMower2 = Arrays.asList(ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, TURN_RIGHT, TURN_RIGHT, ADVANCE);
+        MowerBatteryEntry entryMower2 = new MowerBatteryEntry(new Position(3, 3, EAST),
+                Arrays.asList(ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, TURN_RIGHT, TURN_RIGHT, ADVANCE));
 
-        MowerBatteryInput input = new MowerBatteryInput(ground, Arrays.asList(positionMower1, positionMower2), Arrays.asList(movementsMower1, movementsMower2));
+        MowerBatteryInput input = new MowerBatteryInput(ground, Arrays.asList(entryMower1, entryMower2));
 
         // When
         MowerBatteryOutput output = mowerBattery.moveAll(input);

@@ -2,7 +2,6 @@ package com.jsebfranck.mowitnow.battery;
 
 import com.jsebfranck.mowitnow.mower.AutomaticMower;
 import com.jsebfranck.mowitnow.mower.Position;
-import com.jsebfranck.mowitnow.mower.movement.Movement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +13,12 @@ import java.util.List;
 public class MowerBattery {
 
     public MowerBatteryOutput moveAll(MowerBatteryInput input) {
-
         List<Position> resultPositions = new ArrayList<>();
 
-        for (int i = 0 ; i < input.getPositions().size() ; i++) {
-            Position position = input.getPositions().get(i);
-            List<Movement> movements = input.getMovements().get(i);
-
+        for (MowerBatteryEntry entry : input.getEntries()) {
             AutomaticMower automaticMower = new AutomaticMower();
-            automaticMower.move(input.getGround(), position, movements);
-
-            resultPositions.add(position);
+            automaticMower.move(input.getGround(), entry.getPosition(), entry.getMovements());
+            resultPositions.add(entry.getPosition());
         }
 
         return new MowerBatteryOutput(resultPositions);

@@ -5,7 +5,8 @@ import com.jsebfranck.mowitnow.mower.Position;
 import java.util.List;
 
 /**
- * Result of a mower battery.
+ * Result of a mower battery for all the mowers.
+ * @author jsebfranck
  */
 public class MowerBatteryOutput {
 
