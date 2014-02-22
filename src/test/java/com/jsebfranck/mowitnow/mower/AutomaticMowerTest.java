@@ -1,6 +1,6 @@
-package com.jsebfranck.mowitnow;
+package com.jsebfranck.mowitnow.mower;
 
-import com.jsebfranck.mowitnow.movement.Movement;
+import com.jsebfranck.mowitnow.mower.movement.Movement;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,11 +13,11 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static com.jsebfranck.mowitnow.Orientation.*;
-import static com.jsebfranck.mowitnow.movement.Movement.*;
+import static com.jsebfranck.mowitnow.mower.Orientation.*;
+import static com.jsebfranck.mowitnow.mower.movement.Movement.*;
 
 /**
- * @see AutomaticMower
+ * @see com.jsebfranck.mowitnow.mower.AutomaticMower
  * @author jsebfranck
  */
 @RunWith(Parameterized.class)

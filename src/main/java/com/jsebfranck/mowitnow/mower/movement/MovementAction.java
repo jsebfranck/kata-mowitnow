@@ -1,7 +1,7 @@
-package com.jsebfranck.mowitnow.movement;
+package com.jsebfranck.mowitnow.mower.movement;
 
-import com.jsebfranck.mowitnow.Ground;
-import com.jsebfranck.mowitnow.Position;
+import com.jsebfranck.mowitnow.mower.Ground;
+import com.jsebfranck.mowitnow.mower.Position;
 
 /**
  * Allow to move a mover.

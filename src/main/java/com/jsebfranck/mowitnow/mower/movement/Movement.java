@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.movement;
+package com.jsebfranck.mowitnow.mower.movement;
 
 /**
  * All possible movements of a mover.

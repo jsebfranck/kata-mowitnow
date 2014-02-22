@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow;
+package com.jsebfranck.mowitnow.mower;
 
 /**
  * Represents a mower and its position.

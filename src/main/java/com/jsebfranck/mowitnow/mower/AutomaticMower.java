@@ -1,6 +1,6 @@
-package com.jsebfranck.mowitnow;
+package com.jsebfranck.mowitnow.mower;
 
-import com.jsebfranck.mowitnow.movement.Movement;
+import com.jsebfranck.mowitnow.mower.movement.Movement;
 
 import java.util.List;
 

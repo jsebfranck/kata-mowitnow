@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow;
+package com.jsebfranck.mowitnow.mower;
 
 /**
  * All possible orientations of the mower.
