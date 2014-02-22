@@ -110,8 +110,8 @@ public class MowerServiceTest {
                 /************ Ground limits tests *************/
 
                 { "with advance control on north direction and north border, should not move",
-                        new Ground(10, 10), new Mower(5, 9, NORTH), Arrays.asList(ADVANCE),
-                        5, 9, NORTH },
+                        new Ground(10, 10), new Mower(5, 10, NORTH), Arrays.asList(ADVANCE),
+                        5, 10, NORTH },
 
                 { "with advance control on south direction and south border, should not move",
                         new Ground(10, 10), new Mower(5, 0, SOUTH), Arrays.asList(ADVANCE),
@@ -122,8 +122,8 @@ public class MowerServiceTest {
                         0, 5, WEST },
 
                 { "with advance control on east direction and east border, should not move",
-                        new Ground(10, 10), new Mower(9, 5, EAST), Arrays.asList(ADVANCE),
-                        9, 5, EAST },
+                        new Ground(10, 10), new Mower(10, 5, EAST), Arrays.asList(ADVANCE),
+                        10, 5, EAST },
 
                 /************ Several movements tests *************/
 

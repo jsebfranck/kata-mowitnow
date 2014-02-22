@@ -27,7 +27,7 @@ public class MowerService {
     private void advanceMower(Ground ground, Mower mower) {
         switch (mower.getOrientation()) {
             case NORTH:
-                mower.setY(Math.min(mower.getY() + 1, ground.getHeight() - 1));
+                mower.setY(Math.min(mower.getY() + 1, ground.getHeight()));
                 break;
             case WEST:
                 mower.setX(Math.max(mower.getX() - 1, 0));
@@ -36,7 +36,7 @@ public class MowerService {
                 mower.setY(Math.max(mower.getY() - 1, 0));
                 break;
             case EAST:
-                mower.setX(Math.min(mower.getX() + 1, ground.getWidth() - 1));
+                mower.setX(Math.min(mower.getX() + 1, ground.getWidth()));
                 break;
         }
     }
