@@ -3,13 +3,13 @@ package com.jsebfranck.mowitnow;
 /**
  * Represents a mower and its position.
  */
-public class Mower {
+public class Position {
 
     private int x;
     private int y;
     private Orientation orientation;
 
-    public Mower(int x, int y, Orientation orientation) {
+    public Position(int x, int y, Orientation orientation) {
         this.x = x;
         this.y = y;
         this.orientation = orientation;
