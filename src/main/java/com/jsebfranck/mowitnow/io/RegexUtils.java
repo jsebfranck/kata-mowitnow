@@ -11,6 +11,9 @@ import java.util.regex.Pattern;
  */
 class RegexUtils {
 
+    private RegexUtils() {
+    }
+
     static List<String> findByPattern(String line, String regex, String exceptionMessageIfNotFound) throws IOMowerBatteryInputException {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(line);

@@ -28,7 +28,8 @@ class MovementDeserializer {
                 return Movement.TURN_RIGHT;
             case 'A':
                 return Movement.ADVANCE;
+            default:
+                throw new IOMowerBatteryInputException("Unknown movement provided " + label);
         }
-        throw new IOMowerBatteryInputException("Unknown movement provided " + label);
     }
 }

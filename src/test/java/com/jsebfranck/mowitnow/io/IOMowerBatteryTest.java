@@ -94,7 +94,7 @@ public class IOMowerBatteryTest {
     }
 
     @Test
-    public void moveAll() throws IOMowerBatteryInputException {
+    public void moveAll_withTwoMowers_shouldMoveBothMowers() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 5",
@@ -111,5 +111,31 @@ public class IOMowerBatteryTest {
         assertEquals("We should have two mover positions", 2, result.size());
         assertEquals("First mower position is incorrect", "1 3 N", result.get(0));
         assertEquals("Second mower position is incorrect", "5 1 E", result.get(1));
+    }
+
+    @Test
+    public void moveAll_withFourMowers_shouldMoveAllMowers() throws IOMowerBatteryInputException {
+        // Given
+        List<String> mowerBatteryLines = Arrays.asList(
+                "2 2",
+                "0 0 E",
+                "A",
+                "1 0 N",
+                "A",
+                "1 1 W",
+                "A",
+                "0 1 S",
+                "A"
+        );
+
+        // When
+        List<String> result = mowerBattery.moveAll(mowerBatteryLines);
+
+        // Then
+        assertEquals("We should have four mover positions", 4, result.size());
+        assertEquals("First mower position is incorrect", "1 0 E", result.get(0));
+        assertEquals("Second mower position is incorrect", "1 1 N", result.get(1));
+        assertEquals("Third mower position is incorrect", "0 1 W", result.get(2));
+        assertEquals("Fourth mower position is incorrect", "0 0 S", result.get(3));
     }
 }

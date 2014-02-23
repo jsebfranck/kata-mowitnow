@@ -30,7 +30,8 @@ class PositionDeserializer {
                 return Orientation.WEST;
             case "E":
                 return Orientation.EAST;
+            default:
+                throw new IOMowerBatteryInputException("Unknown position provided " + label);
         }
-        throw new IOMowerBatteryInputException("Unknown position provided " + label);
     }
 }
