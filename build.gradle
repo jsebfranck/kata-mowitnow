@@ -1,5 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'sonar-runner'
+apply plugin: 'jacoco'
 
 repositories {
   mavenCentral()
@@ -7,4 +9,10 @@ repositories {
 
 dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+sonarRunner {
+  sonarProperties {
+    property "sonar.projectName", "mowItNow"
+  }
 }
