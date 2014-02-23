@@ -17,3 +17,9 @@ To compile and test :
 ``` 
 gradle compile test
 ```
+
+To generate sonar reports if you have a default sonar installation on your local machine :
+
+``` 
+gradle clean test sonarRunner
+```
