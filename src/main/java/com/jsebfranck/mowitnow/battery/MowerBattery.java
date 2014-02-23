@@ -13,14 +13,14 @@ import java.util.List;
 public class MowerBattery {
 
     public MowerBatteryOutput moveAll(MowerBatteryInput input) {
-        List<Position> resultPositions = new ArrayList<>();
+        List<Position> finalPositions = new ArrayList<>();
 
         for (MowerBatteryEntry entry : input.getEntries()) {
             AutomaticMower automaticMower = new AutomaticMower();
             automaticMower.move(input.getGround(), entry.getPosition(), entry.getMovements());
-            resultPositions.add(entry.getPosition());
+            finalPositions.add(entry.getPosition());
         }
 
-        return new MowerBatteryOutput(resultPositions);
+        return new MowerBatteryOutput(finalPositions);
     }
 }

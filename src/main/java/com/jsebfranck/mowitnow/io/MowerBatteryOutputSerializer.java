@@ -12,13 +12,13 @@ import java.util.List;
  */
 class MowerBatteryOutputSerializer {
 
+    private final PositionSerializer positionSerializer = new PositionSerializer();
+
     List<String> serialize(MowerBatteryOutput mowerBatteryOutput) {
-        List<String> result = new ArrayList<String>();
-
+        List<String> finalPositions = new ArrayList<String>();
         for (Position position : mowerBatteryOutput.getPositions()) {
-            result.add(position.getX() + " " + position.getY() + " " + position.getOrientation().toString().charAt(0));
+            finalPositions.add(positionSerializer.serialize(position));
         }
-
-        return result;
+        return finalPositions;
     }
 }
