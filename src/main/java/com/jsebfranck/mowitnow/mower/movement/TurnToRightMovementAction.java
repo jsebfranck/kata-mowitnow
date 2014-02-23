@@ -1,8 +1,8 @@
 package com.jsebfranck.mowitnow.mower.movement;
 
 import com.jsebfranck.mowitnow.mower.ground.Ground;
-import com.jsebfranck.mowitnow.mower.position.Position;
 import com.jsebfranck.mowitnow.mower.position.Orientation;
+import com.jsebfranck.mowitnow.mower.position.Position;
 
 /**
  * Allow to move a mower to the right.

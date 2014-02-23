@@ -1,7 +1,5 @@
 package com.jsebfranck.mowitnow.mower.position;
 
-import com.jsebfranck.mowitnow.mower.position.Orientation;
-
 /**
  * Represents a mower position.
  * @author jsebfranck

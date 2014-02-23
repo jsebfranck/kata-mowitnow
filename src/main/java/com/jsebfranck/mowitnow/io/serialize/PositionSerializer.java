@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.io;
+package com.jsebfranck.mowitnow.io.serialize;
 
 import com.jsebfranck.mowitnow.mower.position.Position;
 

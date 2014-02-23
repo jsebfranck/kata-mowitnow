@@ -1,5 +1,8 @@
 package com.jsebfranck.mowitnow.battery;
 
+import com.jsebfranck.mowitnow.battery.input.MowerBatteryInput;
+import com.jsebfranck.mowitnow.battery.input.MowerBatteryInputEntry;
+import com.jsebfranck.mowitnow.battery.output.MowerBatteryOutput;
 import com.jsebfranck.mowitnow.mower.ground.Ground;
 import com.jsebfranck.mowitnow.mower.position.Position;
 import org.junit.Before;
@@ -30,10 +33,10 @@ public class MowerBatteryTest {
         // Given
         Ground ground = new Ground(5, 5);
 
-        MowerBatteryEntry entryMower1 = new MowerBatteryEntry(new Position(1, 2, NORTH),
+        MowerBatteryInputEntry entryMower1 = new MowerBatteryInputEntry(new Position(1, 2, NORTH),
                 Arrays.asList(TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, TURN_LEFT, ADVANCE, ADVANCE));
 
-        MowerBatteryEntry entryMower2 = new MowerBatteryEntry(new Position(3, 3, EAST),
+        MowerBatteryInputEntry entryMower2 = new MowerBatteryInputEntry(new Position(3, 3, EAST),
                 Arrays.asList(ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, TURN_RIGHT, TURN_RIGHT, ADVANCE));
 
         MowerBatteryInput input = new MowerBatteryInput(ground, Arrays.asList(entryMower1, entryMower2));

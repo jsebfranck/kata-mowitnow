@@ -1,8 +1,11 @@
 package com.jsebfranck.mowitnow.io;
 
 import com.jsebfranck.mowitnow.battery.MowerBattery;
-import com.jsebfranck.mowitnow.battery.MowerBatteryInput;
-import com.jsebfranck.mowitnow.battery.MowerBatteryOutput;
+import com.jsebfranck.mowitnow.battery.input.MowerBatteryInput;
+import com.jsebfranck.mowitnow.battery.output.MowerBatteryOutput;
+import com.jsebfranck.mowitnow.io.deserialize.IOMowerBatteryInputException;
+import com.jsebfranck.mowitnow.io.deserialize.MowerBatteryInputDeserializer;
+import com.jsebfranck.mowitnow.io.serialize.MowerBatteryOutputSerializer;
 
 import java.util.List;
 

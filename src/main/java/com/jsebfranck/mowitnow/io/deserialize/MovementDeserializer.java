@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.io;
+package com.jsebfranck.mowitnow.io.deserialize;
 
 import com.jsebfranck.mowitnow.mower.movement.Movement;
 
@@ -15,12 +15,12 @@ class MovementDeserializer {
 
         for (int i = 0 ; i < movementsLine.length() ; i++) {
             char label = movementsLine.charAt(i);
-            movements.add(getMovementFromLabel(label));
+            movements.add(deserializeMovement(label));
         }
         return movements;
     }
 
-    private Movement getMovementFromLabel(char label) throws IOMowerBatteryInputException {
+    private Movement deserializeMovement(char label) throws IOMowerBatteryInputException {
         switch (label) {
             case 'G':
                 return Movement.TURN_LEFT;

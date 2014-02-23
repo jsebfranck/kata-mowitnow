@@ -1,14 +1,14 @@
-package com.jsebfranck.mowitnow.io;
+package com.jsebfranck.mowitnow.io.deserialize;
 
 import com.jsebfranck.mowitnow.mower.ground.Ground;
 
 import java.util.List;
 
 /**
- * Allow to deserialize a ground line.
+ * Allow to deserialize a ground.
  * @author jsebfranck
  */
-public class GroundDeserializer {
+class GroundDeserializer {
 
     Ground deserialize(String groundLine) throws IOMowerBatteryInputException {
         List<String> groundParameters = RegexUtils.findByPattern(groundLine, "(\\d)\\s(\\d)", "Invalid ground provided " + groundLine);

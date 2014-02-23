@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.io;
+package com.jsebfranck.mowitnow.io.deserialize;
 
 import com.jsebfranck.mowitnow.mower.position.Orientation;
 import com.jsebfranck.mowitnow.mower.position.Position;
@@ -15,12 +15,12 @@ class PositionDeserializer {
         List<String> positionParameters = RegexUtils.findByPattern(positionLine, "(\\d)\\s(\\d)\\s(\\p{Upper})", "Invalid position provided " + positionLine);
         int x = Integer.valueOf(positionParameters.get(0));
         int y = Integer.valueOf(positionParameters.get(1));
-        Orientation orientation = getOrientationFromLabel(positionParameters.get(2));
+        Orientation orientation = deserializeOrientation(positionParameters.get(2));
 
         return new Position(x, y, orientation);
     }
 
-    private Orientation getOrientationFromLabel(String label) throws IOMowerBatteryInputException {
+    private Orientation deserializeOrientation(String label) throws IOMowerBatteryInputException {
         switch (label) {
             case "N":
                 return Orientation.NORTH;

@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.battery;
+package com.jsebfranck.mowitnow.battery.output;
 
 import com.jsebfranck.mowitnow.mower.position.Position;
 

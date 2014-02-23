@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.io;
+package com.jsebfranck.mowitnow.io.deserialize;
 
 import java.util.ArrayList;
 import java.util.List;

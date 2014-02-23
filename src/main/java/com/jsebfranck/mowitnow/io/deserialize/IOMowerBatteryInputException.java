@@ -1,10 +1,10 @@
-package com.jsebfranck.mowitnow.io;
+package com.jsebfranck.mowitnow.io.deserialize;
 
 /**
  * Thrown if the IO mower battery lines are invalid.
  * @author jsebfranck
  */
-class IOMowerBatteryInputException extends Exception {
+public class IOMowerBatteryInputException extends Exception {
 
     IOMowerBatteryInputException(String message) {
         super(message);

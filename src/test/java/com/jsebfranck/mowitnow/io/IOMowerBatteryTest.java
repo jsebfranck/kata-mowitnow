@@ -1,5 +1,6 @@
 package com.jsebfranck.mowitnow.io;
 
+import com.jsebfranck.mowitnow.io.deserialize.IOMowerBatteryInputException;
 import org.junit.Before;
 import org.junit.Test;
 

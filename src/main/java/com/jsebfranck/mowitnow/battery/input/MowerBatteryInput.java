@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.battery;
+package com.jsebfranck.mowitnow.battery.input;
 
 
 import com.jsebfranck.mowitnow.mower.ground.Ground;
@@ -12,9 +12,9 @@ import java.util.List;
 public class MowerBatteryInput {
 
     private final Ground ground;
-    private final List<MowerBatteryEntry> entries;
+    private final List<MowerBatteryInputEntry> entries;
 
-    public MowerBatteryInput(Ground ground, List<MowerBatteryEntry> entries) {
+    public MowerBatteryInput(Ground ground, List<MowerBatteryInputEntry> entries) {
         this.ground = ground;
         this.entries = entries;
     }
@@ -23,7 +23,7 @@ public class MowerBatteryInput {
         return ground;
     }
 
-    public List<MowerBatteryEntry> getEntries() {
+    public List<MowerBatteryInputEntry> getEntries() {
         return entries;
     }
 }
