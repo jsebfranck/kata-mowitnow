@@ -139,7 +139,14 @@ public class AutomaticMowerTest {
                 { "with several different movements, should still move several times",
                         new Ground(5, 5), new Position(3, 3, EAST),
                         Arrays.asList(ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, ADVANCE, TURN_RIGHT, ADVANCE, TURN_RIGHT, TURN_RIGHT, ADVANCE),
-                        5, 1, EAST }
+                        5, 1, EAST },
+
+                /************ Weird cases tests *************/
+
+                { "with mower out of the ground, should quickly join the ground after three moves",
+                        new Ground(5, 5), new Position(10, 10, NORTH),
+                        Arrays.asList(ADVANCE, TURN_RIGHT, ADVANCE),
+                        5, 5, EAST }
         });
     }
 
