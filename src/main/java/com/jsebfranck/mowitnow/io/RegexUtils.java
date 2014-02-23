@@ -11,11 +11,11 @@ import java.util.regex.Pattern;
  */
 class RegexUtils {
 
-    static List<String> findByPattern(String line, String regex, String exceptionMessageIfNotFound) throws IOMowerBatteryException {
+    static List<String> findByPattern(String line, String regex, String exceptionMessageIfNotFound) throws IOMowerBatteryInputException {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(line);
         if (! matcher.find()) {
-            throw new IOMowerBatteryException(exceptionMessageIfNotFound);
+            throw new IOMowerBatteryInputException(exceptionMessageIfNotFound);
         }
 
         List<String> results = new ArrayList<>(matcher.groupCount());

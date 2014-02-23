@@ -10,7 +10,7 @@ import java.util.List;
  */
 class MovementDeserializer {
 
-    List<Movement> deserialize(String movementsLine) throws IOMowerBatteryException {
+    List<Movement> deserialize(String movementsLine) throws IOMowerBatteryInputException {
         List<Movement> movements = new ArrayList<Movement>();
 
         for (int i = 0 ; i < movementsLine.length() ; i++) {
@@ -20,7 +20,7 @@ class MovementDeserializer {
         return movements;
     }
 
-    private Movement getMovementFromLabel(char label) throws IOMowerBatteryException {
+    private Movement getMovementFromLabel(char label) throws IOMowerBatteryInputException {
         switch (label) {
             case 'G':
                 return Movement.TURN_LEFT;
@@ -29,6 +29,6 @@ class MovementDeserializer {
             case 'A':
                 return Movement.ADVANCE;
         }
-        throw new IOMowerBatteryException("Unknown movement provided " + label);
+        throw new IOMowerBatteryInputException("Unknown movement provided " + label);
     }
 }

@@ -19,11 +19,11 @@ class MowerBatteryInputDeserializer {
     private final PositionDeserializer positionDeserializer = new PositionDeserializer();
     private final MovementDeserializer movementDeserializer = new MovementDeserializer();
 
-    MowerBatteryInput deserialize(List<String> mowerBatteryLines) throws IOMowerBatteryException {
+    MowerBatteryInput deserialize(List<String> mowerBatteryLines) throws IOMowerBatteryInputException {
         Iterator<String> iterator = mowerBatteryLines.iterator();
 
         if (! iterator.hasNext()) {
-            throw new IOMowerBatteryException("Lines cannot be empty");
+            throw new IOMowerBatteryInputException("Lines cannot be empty");
         }
 
         // First line is the ground
@@ -34,7 +34,7 @@ class MowerBatteryInputDeserializer {
         while (iterator.hasNext()) {
             Position position = positionDeserializer.deserialize(iterator.next());
             if (! iterator.hasNext()) {
-                throw new IOMowerBatteryException("A mower has no position");
+                throw new IOMowerBatteryInputException("A mower has no position");
             }
             entries.add(new MowerBatteryEntry(position, movementDeserializer.deserialize(iterator.next())));
         }

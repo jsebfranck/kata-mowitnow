@@ -5,6 +5,7 @@ import com.jsebfranck.mowitnow.mower.Position;
 
 /**
  * Allow to advance a mower.
+ * Check that the mower respects the ground limits.
  * @author jsebfranck
  */
 class AdvanceMovementAction implements MovementAction {

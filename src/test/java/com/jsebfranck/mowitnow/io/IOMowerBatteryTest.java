@@ -22,8 +22,8 @@ public class IOMowerBatteryTest {
         mowerBattery = new IOMowerBattery();
     }
 
-    @Test(expected = IOMowerBatteryException.class)
-    public void moveAll_withEmptyLines_shouldThrowsException() throws IOMowerBatteryException {
+    @Test(expected = IOMowerBatteryInputException.class)
+    public void moveAll_withEmptyLines_shouldThrowsException() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Collections.emptyList();
 
@@ -31,8 +31,8 @@ public class IOMowerBatteryTest {
         mowerBattery.moveAll(mowerBatteryLines);
     }
 
-    @Test(expected = IOMowerBatteryException.class)
-    public void moveAll_withInvalidGround_shouldThrowsException() throws IOMowerBatteryException {
+    @Test(expected = IOMowerBatteryInputException.class)
+    public void moveAll_withInvalidGround_shouldThrowsException() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 W"
@@ -42,8 +42,8 @@ public class IOMowerBatteryTest {
         mowerBattery.moveAll(mowerBatteryLines);
     }
 
-    @Test(expected = IOMowerBatteryException.class)
-    public void moveAll_withInvalidPosition_shouldThrowsException() throws IOMowerBatteryException {
+    @Test(expected = IOMowerBatteryInputException.class)
+    public void moveAll_withInvalidPosition_shouldThrowsException() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 5",
@@ -54,8 +54,8 @@ public class IOMowerBatteryTest {
         mowerBattery.moveAll(mowerBatteryLines);
     }
 
-    @Test(expected = IOMowerBatteryException.class)
-    public void moveAll_withUnknownPosition_shouldThrowsException() throws IOMowerBatteryException {
+    @Test(expected = IOMowerBatteryInputException.class)
+    public void moveAll_withUnknownPosition_shouldThrowsException() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 5",
@@ -66,8 +66,8 @@ public class IOMowerBatteryTest {
         mowerBattery.moveAll(mowerBatteryLines);
     }
 
-    @Test(expected = IOMowerBatteryException.class)
-    public void moveAll_withUnknownMovement_shouldThrowsException() throws IOMowerBatteryException {
+    @Test(expected = IOMowerBatteryInputException.class)
+    public void moveAll_withUnknownMovement_shouldThrowsException() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 5",
@@ -79,8 +79,8 @@ public class IOMowerBatteryTest {
         mowerBattery.moveAll(mowerBatteryLines);
     }
 
-    @Test(expected = IOMowerBatteryException.class)
-    public void moveAll_withPositionWithoutMovement_shouldThrowsException() throws IOMowerBatteryException {
+    @Test(expected = IOMowerBatteryInputException.class)
+    public void moveAll_withPositionWithoutMovement_shouldThrowsException() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 5",
@@ -94,7 +94,7 @@ public class IOMowerBatteryTest {
     }
 
     @Test
-    public void moveAll() throws IOMowerBatteryException {
+    public void moveAll() throws IOMowerBatteryInputException {
         // Given
         List<String> mowerBatteryLines = Arrays.asList(
                 "5 5",

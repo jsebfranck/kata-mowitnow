@@ -4,9 +4,9 @@ package com.jsebfranck.mowitnow.io;
  * Thrown if the IO mower battery lines are invalid.
  * @author jsebfranck
  */
-class IOMowerBatteryException extends Exception {
+class IOMowerBatteryInputException extends Exception {
 
-    IOMowerBatteryException(String message) {
+    IOMowerBatteryInputException(String message) {
         super(message);
     }
 }

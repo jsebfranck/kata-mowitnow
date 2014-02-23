@@ -11,7 +11,7 @@ import java.util.List;
  */
 class PositionDeserializer {
 
-    Position deserialize(String positionLine) throws IOMowerBatteryException {
+    Position deserialize(String positionLine) throws IOMowerBatteryInputException {
         List<String> positionParameters = RegexUtils.findByPattern(positionLine, "(\\d)\\s(\\d)\\s(\\p{Upper})", "Invalid position provided " + positionLine);
         int x = Integer.valueOf(positionParameters.get(0));
         int y = Integer.valueOf(positionParameters.get(1));
@@ -20,7 +20,7 @@ class PositionDeserializer {
         return new Position(x, y, orientation);
     }
 
-    private Orientation getOrientationFromLabel(String label) throws IOMowerBatteryException {
+    private Orientation getOrientationFromLabel(String label) throws IOMowerBatteryInputException {
         switch (label) {
             case "N":
                 return Orientation.NORTH;
@@ -31,6 +31,6 @@ class PositionDeserializer {
             case "E":
                 return Orientation.EAST;
         }
-        throw new IOMowerBatteryException("Unknown position provided " + label);
+        throw new IOMowerBatteryInputException("Unknown position provided " + label);
     }
 }

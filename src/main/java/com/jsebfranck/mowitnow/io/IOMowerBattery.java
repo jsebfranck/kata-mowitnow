@@ -16,7 +16,7 @@ public class IOMowerBattery {
     private final MowerBatteryInputDeserializer inputDeserializer = new MowerBatteryInputDeserializer();
     private final MowerBatteryOutputSerializer outputSerializer = new MowerBatteryOutputSerializer();
 
-    public List<String> moveAll(List<String> mowerBatteryLines) throws IOMowerBatteryException {
+    public List<String> moveAll(List<String> mowerBatteryLines) throws IOMowerBatteryInputException {
         MowerBatteryInput input = inputDeserializer.deserialize(mowerBatteryLines);
         MowerBatteryOutput output = mowerBattery.moveAll(input);
         return outputSerializer.serialize(output);

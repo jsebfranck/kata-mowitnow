@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class GroundDeserializer {
 
-    Ground deserialize(String groundLine) throws IOMowerBatteryException {
+    Ground deserialize(String groundLine) throws IOMowerBatteryInputException {
         List<String> groundParameters = RegexUtils.findByPattern(groundLine, "(\\d)\\s(\\d)", "Invalid ground provided " + groundLine);
         int width = Integer.valueOf(groundParameters.get(0));
         int height = Integer.valueOf(groundParameters.get(1));
