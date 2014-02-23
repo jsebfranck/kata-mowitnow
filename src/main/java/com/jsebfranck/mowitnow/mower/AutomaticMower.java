@@ -1,6 +1,8 @@
 package com.jsebfranck.mowitnow.mower;
 
+import com.jsebfranck.mowitnow.mower.ground.Ground;
 import com.jsebfranck.mowitnow.mower.movement.Movement;
+import com.jsebfranck.mowitnow.mower.position.Position;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.jsebfranck.mowitnow.io;
 
-import com.jsebfranck.mowitnow.mower.Position;
+import com.jsebfranck.mowitnow.mower.position.Position;
 
 /**
  * Allow to serialize a position line.

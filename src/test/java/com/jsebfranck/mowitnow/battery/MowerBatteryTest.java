@@ -1,14 +1,14 @@
 package com.jsebfranck.mowitnow.battery;
 
-import com.jsebfranck.mowitnow.mower.Ground;
-import com.jsebfranck.mowitnow.mower.Position;
+import com.jsebfranck.mowitnow.mower.ground.Ground;
+import com.jsebfranck.mowitnow.mower.position.Position;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static com.jsebfranck.mowitnow.mower.Orientation.EAST;
-import static com.jsebfranck.mowitnow.mower.Orientation.NORTH;
+import static com.jsebfranck.mowitnow.mower.position.Orientation.EAST;
+import static com.jsebfranck.mowitnow.mower.position.Orientation.NORTH;
 import static com.jsebfranck.mowitnow.mower.movement.Movement.*;
 import static org.junit.Assert.assertEquals;
 

@@ -1,7 +1,7 @@
 package com.jsebfranck.mowitnow.io;
 
-import com.jsebfranck.mowitnow.mower.Orientation;
-import com.jsebfranck.mowitnow.mower.Position;
+import com.jsebfranck.mowitnow.mower.position.Orientation;
+import com.jsebfranck.mowitnow.mower.position.Position;
 
 import java.util.List;
 

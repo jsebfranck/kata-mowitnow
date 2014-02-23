@@ -1,4 +1,4 @@
-package com.jsebfranck.mowitnow.mower;
+package com.jsebfranck.mowitnow.mower.ground;
 
 /**
  * Represents the ground where a mower can be moved.

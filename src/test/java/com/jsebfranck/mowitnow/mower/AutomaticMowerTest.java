@@ -1,6 +1,9 @@
 package com.jsebfranck.mowitnow.mower;
 
+import com.jsebfranck.mowitnow.mower.ground.Ground;
 import com.jsebfranck.mowitnow.mower.movement.Movement;
+import com.jsebfranck.mowitnow.mower.position.Orientation;
+import com.jsebfranck.mowitnow.mower.position.Position;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static com.jsebfranck.mowitnow.mower.Orientation.*;
+import static com.jsebfranck.mowitnow.mower.position.Orientation.*;
 import static com.jsebfranck.mowitnow.mower.movement.Movement.*;
 
 /**

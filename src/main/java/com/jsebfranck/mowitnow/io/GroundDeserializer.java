@@ -1,6 +1,6 @@
 package com.jsebfranck.mowitnow.io;
 
-import com.jsebfranck.mowitnow.mower.Ground;
+import com.jsebfranck.mowitnow.mower.ground.Ground;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.jsebfranck.mowitnow.battery;
 
-import com.jsebfranck.mowitnow.mower.Position;
+import com.jsebfranck.mowitnow.mower.position.Position;
 
 import java.util.List;
 

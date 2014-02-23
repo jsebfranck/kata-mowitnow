@@ -1,7 +1,7 @@
 package com.jsebfranck.mowitnow.battery;
 
 
-import com.jsebfranck.mowitnow.mower.Ground;
+import com.jsebfranck.mowitnow.mower.ground.Ground;
 
 import java.util.List;
 

@@ -2,8 +2,8 @@ package com.jsebfranck.mowitnow.io;
 
 import com.jsebfranck.mowitnow.battery.MowerBatteryEntry;
 import com.jsebfranck.mowitnow.battery.MowerBatteryInput;
-import com.jsebfranck.mowitnow.mower.Ground;
-import com.jsebfranck.mowitnow.mower.Position;
+import com.jsebfranck.mowitnow.mower.ground.Ground;
+import com.jsebfranck.mowitnow.mower.position.Position;
 
 import java.util.ArrayList;
 import java.util.Iterator;
